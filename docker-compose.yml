@@ -2,7 +2,7 @@ version: "3"
 services:
   app:
     container_name: dockerize-node-mongo-app
-    rastart: always
+    restart: always
     build: .
     #map from image port (3000) to actual container port
     ports:
