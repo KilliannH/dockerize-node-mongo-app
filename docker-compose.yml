@@ -12,5 +12,11 @@ services:
   mongo:
     container_name: mongo
     image: mongo
+    environment:
+      #have to match config.js file
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+
+    #an example for mapping mongo port
     ports:
       - "27018:27017"
