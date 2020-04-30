@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const bodyparser = require('body-parser');
-const config = require('./config');
 
 const {
     DB_HOST,
