@@ -4,6 +4,16 @@ services:
     container_name: dockerize-node-mongo-app
     restart: always
     build: .
+    env_file:
+      - .env
+    environment:
+      - DB_HOST=$DB_HOST
+      - DB_PORT=$DB_PORT
+      - DB_USER=$DB_USER
+      - DB_PASSWORD=$DB_PASSWORD
+      - PORT=$PORT
+      - HOST=$HOST
+      - API_KEY=$API_KEY
     #map from image port (3000) to actual container port
     ports:
       - "8080:3000"
@@ -12,11 +22,10 @@ services:
   mongo:
     container_name: mongo
     image: mongo
+    env_file:
+      - .env
     environment:
       #have to match config.js file
-      MONGO_INITDB_ROOT_USERNAME: admin
-      MONGO_INITDB_ROOT_PASSWORD: admin
-
-    #an example for mapping mongo port
-    ports:
-      - "27017:27017"
+      MONGO_INITDB_ROOT_USERNAME: $DB_USER
+      MONGO_INITDB_ROOT_PASSWORD: $DB_PASSWORD
+      MONGO_INITDB_DATABASE: first_db

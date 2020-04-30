@@ -3,13 +3,23 @@ const express = require('express');
 const bodyparser = require('body-parser');
 const config = require('./config');
 
+const {
+    DB_HOST,
+    DB_PORT,
+    DB_USER,
+    DB_PASSWORD,
+    PORT,
+    HOST,
+    API_KEY
+} = process.env;
+
 const app = express();
 
 app.use(bodyparser.json());
 
-const port = process.env.PORT || config.PORT;
-const host = process.env.HOST || config.HOST;
-const db_url = `mongodb://${config.DB_USER}:${config.DB_PASSWORD}@${config.DB_HOST}:${config.DB_PORT}/first_db`;
+const port = process.env.PORT || PORT;
+const host = process.env.HOST || HOST;
+const db_url = `mongodb://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/first_db`;
 
 mongoose.connect(db_url, (err) => {
     if(err) {
