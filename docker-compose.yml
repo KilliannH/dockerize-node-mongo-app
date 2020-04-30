@@ -9,7 +9,6 @@ services:
     environment:
       - ME_CONFIG_MONGODB_ADMINUSERNAME=$DB_USER
       - ME_CONFIG_MONGODB_ADMINPASSWORD=$DB_PASSWORD
-      - DB_HOST=$DB_HOST
       - DB_PORT=$DB_PORT
       - API_KEY=$API_KEY
     #map from image port (3000) to actual container port
