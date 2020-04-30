@@ -15,7 +15,7 @@ mongoose.connect(db_url, (err) => {
     if(err) {
         console.error(err);
     } else {
-        console.log("Database connection esablished successfully");
+        console.log("Database connection established successfully");
     }
 });
 

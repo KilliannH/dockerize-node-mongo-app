@@ -19,4 +19,4 @@ services:
 
     #an example for mapping mongo port
     ports:
-      - "27017:27018"
+      - "27017:27017"
