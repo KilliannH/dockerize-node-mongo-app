@@ -9,8 +9,8 @@ services:
       - "8080:3000"
     links:
       - mongo
-    mongo:
-      container_name: mongo
-      image: mongo
-      ports:
-        - "27018:27017"
+  mongo:
+    container_name: mongo
+     image: mongo
+     ports:
+       - "27018:27017"
