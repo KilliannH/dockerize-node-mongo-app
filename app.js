@@ -11,7 +11,7 @@ const app = express();
 app.use(bodyparser.json());
 
 const port = process.env.PORT || 3000;
-const db_url = `mongodb://root:example@mongo:27027/first_db`;
+const db_url = `mongodb://root:example@mongo:27017/first_db`;
 
 mongoose.connect(db_url, (err) => {
     if(err) {
