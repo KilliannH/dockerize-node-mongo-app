@@ -10,9 +10,6 @@ services:
     env_file:
       - .env
     environment:
-      - ME_CONFIG_MONGODB_ADMINUSERNAME=$DB_USER
-      - ME_CONFIG_MONGODB_ADMINPASSWORD=$DB_PASSWORD
-      - DB_PORT=$DB_PORT
       - API_KEY=$API_KEY
     #map from image port (3000) to actual container port
     ports:
@@ -23,10 +20,5 @@ services:
   mongo:
     container_name: mongo
     image: mongo
-    env_file:
-      - .env
-    environment:
-      #have to match config.js file
-      MONGO_INITDB_ROOT_USERNAME: $DB_USER
-      MONGO_INITDB_ROOT_PASSWORD: $DB_PASSWORD
-      MONGO_INITDB_DATABASE: first_db
+    ports:
+    - "27017:27018"

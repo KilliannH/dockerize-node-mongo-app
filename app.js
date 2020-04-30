@@ -3,10 +3,6 @@ const express = require('express');
 const bodyparser = require('body-parser');
 
 const {
-    DB_HOST,
-    DB_PORT,
-    DB_USER,
-    DB_PASSWORD,
     API_KEY
 } = process.env;
 
@@ -15,7 +11,7 @@ const app = express();
 app.use(bodyparser.json());
 
 const port = process.env.PORT || 3000;
-const db_url = `mongodb://${DB_USER}:${DB_PASSWORD}@localhost:${DB_PORT}/first_db`;
+const db_url = `mongodb://@localhost:27028/first_db`;
 
 mongoose.connect(db_url, (err) => {
     if(err) {
