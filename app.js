@@ -10,7 +10,7 @@ const db_url = "mongodb://localhost:27017/first_db";
 
 mongoose.connect(db_url, (err) => {
     if(err) {
-        console.error("Error occured while connecting to mongodb");
+        console.error(err);
     } else {
         console.log("Database connection esablished successfully");
     }
