@@ -7,8 +7,6 @@ const {
     DB_PORT,
     DB_USER,
     DB_PASSWORD,
-    PORT,
-    HOST,
     API_KEY
 } = process.env;
 
@@ -16,8 +14,7 @@ const app = express();
 
 app.use(bodyparser.json());
 
-const port = process.env.PORT || PORT;
-const host = process.env.HOST || HOST;
+const port = process.env.PORT || 3000;
 const db_url = `mongodb://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/first_db`;
 
 mongoose.connect(db_url, (err) => {
@@ -32,4 +29,4 @@ app.get('/', (req, res) => {
     res.send("container works");
 });
 
-app.listen(port, host, () => console.log(`App running successfully on port number ${port}...`));
+app.listen(port, () => console.log(`App running successfully on port number ${port}...`));
