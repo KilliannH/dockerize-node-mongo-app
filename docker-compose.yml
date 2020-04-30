@@ -1,17 +1,6 @@
 version: "2.1"
 services:
 
-  mongo:
-    container_name: mongo
-    image: mongo
-    env_file:
-      - .env
-    environment:
-      #have to match config.js file
-      MONGO_INITDB_ROOT_USERNAME: $DB_USER
-      MONGO_INITDB_ROOT_PASSWORD: $DB_PASSWORD
-      MONGO_INITDB_DATABASE: first_db
-
   app:
     depends_on:
       mongo:
@@ -31,3 +20,19 @@ services:
       - "8080:3000"
     links:
       - mongo
+
+  mongo:
+    container_name: mongo
+    image: mongo
+    env_file:
+      - .env
+    environment:
+      #have to match config.js file
+      MONGO_INITDB_ROOT_USERNAME: $DB_USER
+      MONGO_INITDB_ROOT_PASSWORD: $DB_PASSWORD
+      MONGO_INITDB_DATABASE: first_db
+    healthcheck:
+      test: ["CMD", "echo", "show dbs", "|", "mongo"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
