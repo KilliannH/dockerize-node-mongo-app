@@ -29,6 +29,7 @@ services:
     env_file:
       - .env
     ports:
-      - "27017:$DB_PORT"
+      - "$DB_EXPOSED_PORT:$DB_PORT"
     environment:
       DB_PORT: $DB_PORT
+      DB_EXPOSED_PORT: $DB_EXPOSED_PORT
