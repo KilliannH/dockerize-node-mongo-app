@@ -18,7 +18,7 @@ app.use(bodyparser.json());
 const port = PORT || 3000;
 const host = HOST || "localhost";
 
-const db_url = `mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`;
+const db_url = `mongodb://${DB_HOST}:27017/${DB_NAME}`;
 
 mongoose.connect(db_url, (err) => {
     if(err) {
