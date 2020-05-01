@@ -29,7 +29,8 @@ services:
     image: mongo
     env_file:
       - .env
-    ports: 27017:DB_HOST
+    ports:
+      - 27017:DB_HOST
     environment:
       ME_CONFIG_MONGODB_ADMINUSERNAME: admin
       ME_CONFIG_MONGODB_ADMINPASSWORD: admin
