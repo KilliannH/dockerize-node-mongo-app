@@ -30,6 +30,6 @@ services:
     env_file:
       - .env
     ports:
-      - "$DB_PORT:27017"
+      - "27017:$DB_PORT"
     environment:
       DB_PORT: $DB_PORT
