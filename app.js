@@ -6,8 +6,10 @@ const {
     API_KEY,
     HOST,
     PORT,
-    DB_EXPOSED_HOST,
-    DB_EXPOSED_PORT,
+    DB_HOST,
+    DB_PORT,
+    DB_USER,
+    DB_PASSWORD,
     DB_NAME
 } = process.env;
 
