@@ -6,12 +6,12 @@ const {
 
 db.createUser(
     {
-        user: DB_USER,
-        pwd: DB_PASSWORD,
+        user: "admin",
+        pwd: "admin",
         roles: [
             {
                 role: "readWrite",
-                db: DB_NAME
+                db: "firstDb"
             }
         ]
     }
