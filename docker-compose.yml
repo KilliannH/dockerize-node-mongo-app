@@ -26,16 +26,11 @@ services:
   mongo:
     container_name: mongo
     restart: always
-    image: mongo
+    build:
+      ./my-mongo
     env_file:
       - .env
     environment:
       MONGO_INITDB_ROOT_USERNAME: $DB_USER
       MONGO_INITDB_ROOT_PASSWORD: $DB_PASSWORD
       MONGO_INITDB_DATABASE: $DB_NAME
-    ports:
-      - "$DB_PORT:$DB_PORT"
-    #Mongo executes mongo-init.js file at db initialisation
-    #:ro = in read only mode
-    volumes:
-      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
