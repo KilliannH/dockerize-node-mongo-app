@@ -6,8 +6,8 @@ const {
 
 db.createUser(
     {
-        user: "admin",
-        pwd: "admin",
+        user: "user",
+        pwd: "user",
         roles: [
             {
                 role: "readWrite",
