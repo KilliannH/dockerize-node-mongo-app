@@ -20,7 +20,7 @@ app.use(bodyparser.json());
 const port = PORT || 3000;
 const host = HOST || "localhost";
 
-const db_url = `mongodb://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`;
+const db_url = `mongodb://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}?authSource=${DB_USER}`;
 
 mongoose.connect(db_url, (err) => {
     if(err) {
