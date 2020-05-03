@@ -39,4 +39,3 @@ services:
     #override mongo-init.js & persist data
     volumes:
       - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
-      - ./mongo-volume:/data/db
